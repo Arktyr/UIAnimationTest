@@ -14,8 +14,8 @@ namespace _Scripts.Infrastructure.StateMachines.App.FSM
 
         public void Enter<TState>() where TState : IState
         {
-            _stateMachine.Enter<TState>();
             Debug.LogError($"Enter In : {typeof(TState).Name}");
+            _stateMachine.Enter<TState>();
         }
 
         public void Add<TState>(TState state) where TState : IExitableState =>
