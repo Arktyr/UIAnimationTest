@@ -4,6 +4,7 @@ using _Scripts.Infrastructure.Singleton;
 using _Scripts.Infrastructure.StateMachines.App.FSM;
 using _Scripts.Infrastructure.StateMachines.Common.States;
 using DG.Tweening;
+using UnityEngine.Device;
 
 namespace _Scripts.Infrastructure.StateMachines.App.States
 {
@@ -25,6 +26,8 @@ namespace _Scripts.Infrastructure.StateMachines.App.States
         public void Enter()
         {
             DOTween.Init();
+
+            Application.targetFrameRate = 75;
             
             _settingsService.UpdateData();
             _soundService.PlaySoundInLoop(SoundID.SoundTrack, SoundGroupID.Music);
