@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5704367912156492773}
   - component: {fileID: 1923971806048108134}
   - component: {fileID: 8725504328776467817}
+  - component: {fileID: 1353800452765173350}
   m_Layer: 5
   m_Name: HelloWindow
   m_TagString: Untagged
@@ -66,10 +67,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _window: {fileID: 7861865817952660203}
   _canvas: {fileID: 0}
-  _alpha: {fileID: 8725504328776467817}
   _durationInSeconds: 1
-  _durationInSecondsFadeShow: 1.5
-  _durationInSecondsFadeHide: 0.8
+  _fadeUIAnimation: {fileID: 1353800452765173350}
   _ease: 7
 --- !u!225 &8725504328776467817
 CanvasGroup:
@@ -83,6 +82,22 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1353800452765173350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602983854477902221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2feffe75cfb4a2d984b605a38c6736a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _alpha: {fileID: 8725504328776467817}
+  _ease: 7
+  _durationInSecondsIn: 1.5
+  _durationInSecondsOut: 0.8
 --- !u!1 &1367122866705161526
 GameObject:
   m_ObjectHideFlags: 0

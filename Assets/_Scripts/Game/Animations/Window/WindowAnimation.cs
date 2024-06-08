@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Game.Animations.Window.Common;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,12 +10,9 @@ namespace _Scripts.Game.Animations.Window
         [SerializeField] private RectTransform _window;
         [SerializeField] private RectTransform _canvas;
         
-        [SerializeField] private CanvasGroup _alpha;
-        
         [SerializeField] private int _durationInSeconds;
-        
-        [SerializeField] private float _durationInSecondsFadeShow;
-        [SerializeField] private float _durationInSecondsFadeHide;
+
+        [SerializeField] private FadeUIAnimation _fadeUIAnimation;
 
         [SerializeField] private Ease _ease;
 
@@ -22,7 +20,6 @@ namespace _Scripts.Game.Animations.Window
         private Vector2 _offscreenDownPosition;
 
         private Tween _moveTween;
-        private Tween _fadeTween;
 
         private Action _currentAction;
         
@@ -37,7 +34,7 @@ namespace _Scripts.Game.Animations.Window
             _currentAction = onComplete;
             Vector2 offscreenTopPosition = new Vector2(_startPosition.x, _canvas.rect.height);
             
-            DoFadeWindow(1, 0, _durationInSecondsFadeShow);
+            _fadeUIAnimation.DoFadeIn();
             DoMoveWindow(_startPosition, offscreenTopPosition);
         }
 
@@ -47,7 +44,7 @@ namespace _Scripts.Game.Animations.Window
             _currentAction = onComplete;
             Vector2 offscreenDownPosition = new Vector2(_startPosition.x, -_canvas.rect.height);
             
-            DoFadeWindow(0, 1, _durationInSecondsFadeHide);
+            _fadeUIAnimation.DoFadeOut();
             DoMoveWindow(offscreenDownPosition, _startPosition);
         }
 
@@ -60,18 +57,10 @@ namespace _Scripts.Game.Animations.Window
                 .OnComplete(() => _currentAction?.Invoke());
         }
 
-        private void DoFadeWindow(float value, float fromValue, float duration)
-        {
-            _fadeTween =_alpha
-                .DOFade(value, duration)
-                .From(fromValue)
-                .SetEase(_ease);
-        }
-
         private void StopAnimation()
         {
             _moveTween?.Kill();
-            _fadeTween?.Kill();
+            _fadeUIAnimation.StopTween();
         }
     }
 }

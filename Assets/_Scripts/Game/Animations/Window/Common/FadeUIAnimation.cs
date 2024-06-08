@@ -8,32 +8,30 @@ namespace _Scripts.Game.Animations.Window.Common
     {
         [SerializeField] private CanvasGroup _alpha;
         [SerializeField] private Ease _ease;
-        [SerializeField] private int _durationInSeconds;
+        
+        [SerializeField] private float _durationInSecondsIn;
+        [SerializeField] private float _durationInSecondsOut;
 
         private Tween _currentTween; 
         
-        public async Task DoFadeIn()
+        public void DoFadeIn()
         {
             _currentTween?.Kill();
             
             _currentTween = _alpha
-                .DOFade(1, _durationInSeconds)
+                .DOFade(1, _durationInSecondsIn)
                 .From(0)
                 .SetEase(_ease);
-
-            await Task.Delay(_durationInSeconds * 1000);
         }
 
-        public async Task DoFadeOut()
+        public void DoFadeOut()
         {
             _currentTween?.Kill();
             
             _currentTween = _alpha
-                .DOFade(0, _durationInSeconds)
+                .DOFade(0, _durationInSecondsOut)
                 .From(1)
                 .SetEase(_ease);
-            
-            await Task.Delay(_durationInSeconds * 1000);
         }
 
         public void StopTween() => 

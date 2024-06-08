@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1060428638760771779
 RectTransform:
   m_ObjectHideFlags: 0
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeUIAnimation: {fileID: 858343531768346030}
+  _delayInSeconds: 1
 --- !u!114 &858343531768346030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +82,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _alpha: {fileID: 6463196579472947485}
   _ease: 1
-  _durationInSeconds: 1
+  _durationInSecondsIn: 1
+  _durationInSecondsOut: 1
 --- !u!225 &6463196579472947485
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -11,14 +11,14 @@ namespace _Scripts.Game.UI.Curtain
 
         public async Task ShowCurtain()
         {
-            await AsyncOpertions.GetAwaitBool((() => _curtainView._isInAnimation == false));
+            await AsyncOpertions.GetAwaitBool((() => _curtainView.IsInAnimation == false));
             
             await _curtainView.Enable();
         }
 
         public async Task DisableCurtain()
         {
-            await AsyncOpertions.GetAwaitBool((() => _curtainView._isInAnimation == false));
+            await AsyncOpertions.GetAwaitBool((() => _curtainView.IsInAnimation == false));
             
             await _curtainView.Disable();
         }

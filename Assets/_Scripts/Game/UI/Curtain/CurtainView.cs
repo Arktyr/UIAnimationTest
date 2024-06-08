@@ -8,22 +8,25 @@ namespace _Scripts.Game.UI.Curtain
     {
         [SerializeField] private FadeUIAnimation _fadeUIAnimation;
 
-        public bool _isInAnimation;
+        [SerializeField] private int _delayInSeconds;
+        public bool IsInAnimation { get; private set; }
         
         public async Task Enable()
         {
             gameObject.SetActive(true);
             
-            _isInAnimation = true;
-            await _fadeUIAnimation.DoFadeIn();
-            _isInAnimation = false;
+            IsInAnimation = true;
+            _fadeUIAnimation.DoFadeIn();
+            await Task.Delay(_delayInSeconds * 1000);
+            IsInAnimation = false;
         }
 
         public async Task Disable()
         {
-            _isInAnimation = true;
-            await _fadeUIAnimation.DoFadeOut();
-            _isInAnimation = false;
+            IsInAnimation = true;
+            _fadeUIAnimation.DoFadeOut();
+            await Task.Delay(_delayInSeconds * 1000);
+            IsInAnimation = false;
             
             gameObject.SetActive(false);
         }
