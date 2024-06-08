@@ -1,8 +1,11 @@
 ﻿using _Scripts.Game.UI.Curtain;
+using _Scripts.Game.UI.Windows.Settings;
 using _Scripts.Infrastructure.Scene;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.Infrastructure.StateMachines.App.FSM;
 using _Scripts.Infrastructure.StateMachines.Common.States;
+using _Scripts.UI.Windows;
+using UnityEngine;
 
 namespace _Scripts.Infrastructure.StateMachines.App.States
 {
@@ -10,28 +13,39 @@ namespace _Scripts.Infrastructure.StateMachines.App.States
     {
         private readonly IAppStateMachine _appStateMachine;
         private readonly ISceneLoaderService _sceneLoaderService;
+        private readonly IWindowService _windowService;
         
-        private CurtainPresenter _curtain;
+        private readonly CurtainPresenter _curtain;
         
         public MainState(IAppStateMachine appStateMachine,
             ISceneLoaderService sceneLoaderService,
+            IWindowService windowService,
             CurtainPresenter curtainPresenter)
         {
             _appStateMachine = appStateMachine;
             _sceneLoaderService = sceneLoaderService;
+            _windowService = windowService;
             _curtain = curtainPresenter;
         }
 
 
+        public void SetLocalDependencies(params IWindow[] windows)
+        {
+            foreach (var window in windows) 
+                _windowService.AddWindow(window);
+        }
+
         public async void Enter()
         {
             await _sceneLoaderService.LoadSceneAsync(SceneID.MainScene);
+            
             await _curtain.DisableCurtain();
         }
 
-        public void Exit()
+        public async void Exit()
         {
-            
+            _windowService.ClearWindows();
+            await _curtain.ShowCurtain();
         }
     }
 }

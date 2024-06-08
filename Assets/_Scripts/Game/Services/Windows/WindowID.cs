@@ -2,6 +2,7 @@
 {
     public enum WindowID
     {
-        HelloWindow = 0
+        HelloWindow = 0,
+        SettingsWindow = 1
     }
 }

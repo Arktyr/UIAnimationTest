@@ -1,4 +1,5 @@
-﻿using _Scripts.Game.UI.Curtain;
+﻿using _Scripts.Game.Services.Settings;
+using _Scripts.Game.UI.Curtain;
 using _Scripts.Infrastructure.Scene;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.UI.Windows;
@@ -8,6 +9,7 @@ namespace _Scripts.Infrastructure.Installer
 {
     public class ProjectInstaller : Installer
     {
+        [SerializeField] private SettingsService _settingsService;
         [SerializeField] private CurtainPresenter _curtain;
         
         public override void Install()
@@ -23,6 +25,9 @@ namespace _Scripts.Infrastructure.Installer
 
             ISceneLoaderService sceneLoaderService = AllServices.Container
                 .RegisterSingle<ISceneLoaderService>(new SceneLoaderService());
+
+            ISettingsService settingsService = AllServices.Container
+                .RegisterSingle<ISettingsService>(_settingsService);
         }
 
         private void BindUI()

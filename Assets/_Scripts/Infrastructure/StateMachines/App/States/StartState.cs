@@ -53,11 +53,9 @@ namespace _Scripts.Infrastructure.StateMachines.App.States
             _windowService.Open<HelloWindow>();
         }
 
-        public async void Exit()
+        public void Exit()
         {
             _windowService.ClearWindows();
-
-            await _curtain.ShowCurtain();
 
             _isSetLocalDependencies = false;
         }

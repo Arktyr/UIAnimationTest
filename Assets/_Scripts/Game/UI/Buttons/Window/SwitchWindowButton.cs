@@ -8,9 +8,9 @@ namespace _Scripts.Game.UI.Buttons
 {
     public class SwitchWindowButton : MonoBehaviour
     {
-        [SerializeField] private WindowSwitcher _windowSwitcher;
         [SerializeField] private Button _button;
         [SerializeField] private WindowID _windowID;
+        [SerializeField] private WindowSwitcher _windowSwitcher;
 
         private void Awake() => 
             _button.onClick.AddListener(SwitchWindow);

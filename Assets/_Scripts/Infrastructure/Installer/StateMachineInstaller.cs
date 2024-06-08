@@ -37,7 +37,8 @@ namespace _Scripts.Infrastructure.Installer
                 .RegisterSingle(new InitializationState(appStateMachine));
             
             MainState mainState = AllServices.Container
-                .RegisterSingle(new MainState(appStateMachine, sceneLoaderService, curtainPresenter));
+                .RegisterSingle
+                    (new MainState(appStateMachine, sceneLoaderService, windowService, curtainPresenter));
             
             StartState state = AllServices.Container
                 .RegisterSingle

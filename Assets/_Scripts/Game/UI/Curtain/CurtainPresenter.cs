@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using _Scripts.Extensions;
 using _Scripts.Infrastructure.Singleton;
 using UnityEngine;
 
@@ -8,10 +9,18 @@ namespace _Scripts.Game.UI.Curtain
     {
         [SerializeField] private CurtainView _curtainView;
 
-        public async Task ShowCurtain() => 
+        public async Task ShowCurtain()
+        {
+            await AsyncOpertions.GetAwaitBool((() => _curtainView._isInAnimation == false));
+            
             await _curtainView.Enable();
+        }
 
-        public async Task DisableCurtain() => 
+        public async Task DisableCurtain()
+        {
+            await AsyncOpertions.GetAwaitBool((() => _curtainView._isInAnimation == false));
+            
             await _curtainView.Disable();
+        }
     }
 }
