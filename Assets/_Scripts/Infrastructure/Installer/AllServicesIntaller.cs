@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using _Scripts.Infrastructure.Installer.Common;
 using UnityEngine;
 
 namespace _Scripts.Infrastructure.Installer
 {
     public class AllServicesIntaller : MonoBehaviour
     {
-        [SerializeField] private List<Installer> _installers;
+        [SerializeField] private List<Common.Installer> _installers;
         [SerializeField] private List<IInjectable> _injectables;
 
         private void Awake()

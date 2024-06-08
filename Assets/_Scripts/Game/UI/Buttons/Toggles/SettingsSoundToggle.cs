@@ -1,17 +1,16 @@
 ﻿using System;
-using _Scripts.Game.Services.Settings;
 using _Scripts.Game.Services.Sound;
+using _Scripts.Infrastructure.Services.Settings;
+using _Scripts.Infrastructure.Services.Sound;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace _Scripts.Game.UI.Buttons.Toggles
 {
-    public class SoundToggle : MonoBehaviour
+    public class SettingsSoundToggle : MonoBehaviour
     {
         [SerializeField] private Toggle _toggle;
         [SerializeField] private SoundGroupID _soundGroupID;
-        [SerializeField] private SoundPlayer _soundPlayer;
-        [SerializeField] private SoundID _soundID;
         [SerializeField] private float _valueOn;
         [SerializeField] private float _valueOff;
 
@@ -25,8 +24,6 @@ namespace _Scripts.Game.UI.Buttons.Toggles
 
         private void OnToggleClicked(bool flag)
         {
-            _soundPlayer.PlaySound(_soundID);
-            
             if (flag)
             {
                 OnValueChanged?.Invoke(_valueOn, _soundGroupID);

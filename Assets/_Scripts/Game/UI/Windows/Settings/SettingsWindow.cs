@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using _Scripts.Game.Animations.Window;
-using _Scripts.Game.Services.Settings;
+using _Scripts.Game.Services.Windows;
 using _Scripts.Game.UI.Buttons.Toggles;
-using _Scripts.Infrastructure.Installer;
+using _Scripts.Infrastructure.Installer.Common;
+using _Scripts.Infrastructure.Services.Settings;
 using _Scripts.Infrastructure.Singleton;
-using _Scripts.UI.Windows;
 using UnityEngine;
 
 namespace _Scripts.Game.UI.Windows.Settings
@@ -13,7 +12,7 @@ namespace _Scripts.Game.UI.Windows.Settings
     public class SettingsWindow : IInjectable, IWindow
     {
         [SerializeField] private WindowAnimation _windowAnimation;
-        [SerializeField] private List<SoundToggle> _soundToggles;
+        [SerializeField] private List<SettingsSoundToggle> _soundToggles;
 
         private ISettingsService _settingsService;
         

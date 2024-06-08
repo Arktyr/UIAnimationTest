@@ -1,10 +1,9 @@
-﻿using _Scripts.Infrastructure.Installer;
+﻿using _Scripts.Infrastructure.Installer.Common;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.Infrastructure.StateMachines.App.FSM;
 using _Scripts.Infrastructure.StateMachines.App.States;
-using Unity.VisualScripting;
 
-namespace _Scripts.Infrastructure.StateMachines.App
+namespace _Scripts.Infrastructure.Bootstrappers
 {
     public class AppBootstrapper : IInjectable
     {

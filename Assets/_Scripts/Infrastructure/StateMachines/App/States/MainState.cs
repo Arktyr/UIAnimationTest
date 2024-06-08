@@ -1,11 +1,10 @@
-﻿using _Scripts.Game.UI.Curtain;
-using _Scripts.Game.UI.Windows.Settings;
+﻿using _Scripts.Game.Services.Windows;
+using _Scripts.Game.Services.Windows.Main;
+using _Scripts.Game.UI.Curtain;
 using _Scripts.Infrastructure.Scene;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.Infrastructure.StateMachines.App.FSM;
 using _Scripts.Infrastructure.StateMachines.Common.States;
-using _Scripts.UI.Windows;
-using UnityEngine;
 
 namespace _Scripts.Infrastructure.StateMachines.App.States
 {

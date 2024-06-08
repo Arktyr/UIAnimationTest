@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Scripts.Infrastructure.Installer
+namespace _Scripts.Infrastructure.Installer.Common
 {
     public abstract class IInjectable : MonoBehaviour
     {

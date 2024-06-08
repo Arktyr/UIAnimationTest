@@ -1,6 +1,6 @@
 using _Scripts.Infrastructure.Singleton;
 
-namespace _Scripts.Game.Services.Settings
+namespace _Scripts.Infrastructure.Services.Settings
 {
     public interface ISettingsService : IService
     {

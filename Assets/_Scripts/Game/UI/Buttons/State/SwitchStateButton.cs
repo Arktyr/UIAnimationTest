@@ -1,10 +1,9 @@
-﻿using _Scripts.Game.Services.Sound;
-using _Scripts.Game.Services.States;
+﻿using _Scripts.Game.Services.States;
 using _Scripts.Infrastructure.StateMachines.Common.States;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Scripts.Game.UI.Buttons
+namespace _Scripts.Game.UI.Buttons.State
 {
     public class SwitchStateButton : MonoBehaviour
     {

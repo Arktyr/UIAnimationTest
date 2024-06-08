@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace _Scripts.Game.Services.Sound
+namespace _Scripts.Infrastructure.Services.Sound
 {
     [Serializable]
     public struct SoundData

@@ -1,5 +1,6 @@
-﻿using _Scripts.Game.Services.Settings;
-using _Scripts.Infrastructure.Installer;
+﻿using _Scripts.Infrastructure.Installer.Common;
+using _Scripts.Infrastructure.Services.Settings;
+using _Scripts.Infrastructure.Services.Sound;
 using _Scripts.Infrastructure.Singleton;
 
 namespace _Scripts.Game.Services.Sound

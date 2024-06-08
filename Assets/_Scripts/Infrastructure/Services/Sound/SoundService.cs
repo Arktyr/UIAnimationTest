@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using _Scripts.Game.Services.Settings;
+﻿using System.Collections.Generic;
+using _Scripts.Infrastructure.Services.Settings;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.Serialization;
 
-namespace _Scripts.Game.Services.Sound
+namespace _Scripts.Infrastructure.Services.Sound
 {
     public class SoundService : MonoBehaviour, ISoundService
     {
@@ -20,9 +17,6 @@ namespace _Scripts.Game.Services.Sound
             if (TryFindSource(soundGroupID, out AudioSource audioSource) == false)
                 return;
             
-            Debug.Log(clip.name);
-            Debug.Log(soundID);
-            Debug.Log(soundGroupID);
             audioSource.clip = clip;
             audioSource.loop = true;
             audioSource.Play();

@@ -1,4 +1,4 @@
-﻿namespace _Scripts.Game.Services.Settings
+﻿namespace _Scripts.Infrastructure.Services.Settings
 {
     public enum SoundGroupID
     {

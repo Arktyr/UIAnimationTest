@@ -79,7 +79,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602983854477902221}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 6260725450701966465}
   - component: {fileID: 8698852414756338492}
   - component: {fileID: 377269855823852109}
+  - component: {fileID: 4343733271637169502}
   m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
@@ -197,8 +198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 55.1}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.929, y: 125.762}
+  m_SizeDelta: {x: 466.435, y: 171.323}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8623349814577273383
 CanvasRenderer:
@@ -296,6 +297,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _windowSwitcher: {fileID: 0}
   _button: {fileID: 8698852414756338492}
+--- !u!114 &4343733271637169502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920620823809019304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34053d2fe6d74492b0a370a9297efe75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundPlayer: {fileID: 0}
+  _soundID: 1
+  _button: {fileID: 8698852414756338492}
 --- !u!1 &4686988544539994364
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,8 +346,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0000009834766, y: -64}
-  m_SizeDelta: {x: 228.4307, y: 65.3}
+  m_AnchoredPosition: {x: -1.5242, y: -119.16}
+  m_SizeDelta: {x: 490.85, y: 175.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9052782717339783402
 CanvasRenderer:
@@ -363,7 +379,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -442,11 +458,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 8
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

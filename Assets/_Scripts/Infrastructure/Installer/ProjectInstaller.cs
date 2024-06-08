@@ -1,14 +1,15 @@
-﻿using _Scripts.Game.Services.Settings;
-using _Scripts.Game.Services.Sound;
+﻿using _Scripts.Game.Services.Sound;
+using _Scripts.Game.Services.Windows.Main;
 using _Scripts.Game.UI.Curtain;
 using _Scripts.Infrastructure.Scene;
+using _Scripts.Infrastructure.Services.Settings;
+using _Scripts.Infrastructure.Services.Sound;
 using _Scripts.Infrastructure.Singleton;
-using _Scripts.UI.Windows;
 using UnityEngine;
 
 namespace _Scripts.Infrastructure.Installer
 {
-    public class ProjectInstaller : Installer
+    public class ProjectInstaller : Common.Installer
     {
         [SerializeField] private SettingsService _settingsService;
         [SerializeField] private SoundService _soundService;

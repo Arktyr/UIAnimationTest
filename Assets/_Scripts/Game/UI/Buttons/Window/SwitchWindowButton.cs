@@ -1,11 +1,9 @@
-﻿using System;
-using _Scripts.Game.Services.Sound;
-using _Scripts.UI.Windows;
-using _Scripts.UI.Windows.Switch;
+﻿using _Scripts.Game.Services.Windows;
+using _Scripts.Game.Services.Windows.Switch;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Scripts.Game.UI.Buttons
+namespace _Scripts.Game.UI.Buttons.Window
 {
     public class SwitchWindowButton : MonoBehaviour
     {

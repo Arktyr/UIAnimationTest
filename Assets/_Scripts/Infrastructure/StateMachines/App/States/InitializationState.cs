@@ -1,5 +1,5 @@
-﻿using _Scripts.Game.Services.Settings;
-using _Scripts.Game.Services.Sound;
+﻿using _Scripts.Infrastructure.Services.Settings;
+using _Scripts.Infrastructure.Services.Sound;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.Infrastructure.StateMachines.App.FSM;
 using _Scripts.Infrastructure.StateMachines.Common.States;

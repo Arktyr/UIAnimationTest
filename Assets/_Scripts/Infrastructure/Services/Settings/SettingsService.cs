@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 
-namespace _Scripts.Game.Services.Settings
+namespace _Scripts.Infrastructure.Services.Settings
 {
     public class SettingsService : MonoBehaviour, ISettingsService
     {

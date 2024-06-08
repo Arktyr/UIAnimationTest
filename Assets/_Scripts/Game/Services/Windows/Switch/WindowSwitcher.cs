@@ -1,11 +1,11 @@
-﻿using System;
+﻿using _Scripts.Game.Services.Windows.Main;
 using _Scripts.Game.UI.Windows.Hello;
 using _Scripts.Game.UI.Windows.Settings;
-using _Scripts.Infrastructure.Installer;
+using _Scripts.Infrastructure.Installer.Common;
 using _Scripts.Infrastructure.Singleton;
 using UnityEngine;
 
-namespace _Scripts.UI.Windows.Switch
+namespace _Scripts.Game.Services.Windows.Switch
 {
     public class WindowSwitcher : IInjectable
     {

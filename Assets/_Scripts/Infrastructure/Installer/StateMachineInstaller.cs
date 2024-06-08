@@ -1,16 +1,17 @@
-﻿using _Scripts.Game.Services.Settings;
-using _Scripts.Game.Services.Sound;
+﻿using _Scripts.Game.Services.Sound;
+using _Scripts.Game.Services.Windows.Main;
 using _Scripts.Game.UI.Curtain;
 using _Scripts.Infrastructure.Scene;
+using _Scripts.Infrastructure.Services.Settings;
+using _Scripts.Infrastructure.Services.Sound;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.Infrastructure.StateMachines.App.FSM;
 using _Scripts.Infrastructure.StateMachines.App.States;
 using _Scripts.Infrastructure.StateMachines.Common;
-using _Scripts.UI.Windows;
 
 namespace _Scripts.Infrastructure.Installer
 {
-    public class StateMachineInstaller : Installer
+    public class StateMachineInstaller : Common.Installer
     {
         public override void Install()
         {

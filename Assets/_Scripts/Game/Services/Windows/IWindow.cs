@@ -1,4 +1,4 @@
-﻿namespace _Scripts.UI.Windows
+﻿namespace _Scripts.Game.Services.Windows
 {
     public interface IWindow
     {

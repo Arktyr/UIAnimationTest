@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Scripts.Game.Animations.Window.Common
 {

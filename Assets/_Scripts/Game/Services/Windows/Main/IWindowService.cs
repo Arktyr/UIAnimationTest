@@ -1,7 +1,7 @@
 ﻿
 using _Scripts.Infrastructure.Singleton;
 
-namespace _Scripts.UI.Windows
+namespace _Scripts.Game.Services.Windows.Main
 {
     public interface IWindowService : IService 
     {

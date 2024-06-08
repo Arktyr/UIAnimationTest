@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 namespace _Scripts.Game.UI.Buttons.Sound
 {
-    public class SoundButton : MonoBehaviour
+    public class SoundToggle : MonoBehaviour
     {
         [SerializeField] private SoundPlayer _soundPlayer;
         [SerializeField] private SoundID _soundID;
-        [SerializeField] private Button _button;
+        [SerializeField] private Toggle _toggle;
         
         private void Awake() => 
-            _button.onClick.AddListener(PlaySound);
+            _toggle.onValueChanged.AddListener(PlaySound);
 
-        private void PlaySound() => 
+        private void PlaySound(bool value) => 
             _soundPlayer.PlaySound(_soundID);
 
-        private void OnDestroy() => 
-            _button.onClick.RemoveAllListeners();
+        private void OnDestroy() =>
+            _toggle.onValueChanged.RemoveAllListeners();
     }
 }

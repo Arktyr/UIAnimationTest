@@ -1,16 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using _Scripts.Extensions;
+﻿using _Scripts.Extensions;
+using _Scripts.Game.Services.Windows;
+using _Scripts.Game.Services.Windows.Main;
 using _Scripts.Game.UI.Curtain;
 using _Scripts.Game.UI.Windows.Hello;
 using _Scripts.Infrastructure.Scene;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.Infrastructure.StateMachines.App.FSM;
 using _Scripts.Infrastructure.StateMachines.Common.States;
-using _Scripts.UI.Windows;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace _Scripts.Infrastructure.StateMachines.App.States
 {

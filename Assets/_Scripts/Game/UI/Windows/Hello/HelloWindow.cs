@@ -1,10 +1,10 @@
 ﻿using _Scripts.Game.Animations.Window;
+using _Scripts.Game.Services.Windows;
 using _Scripts.Game.UI.Curtain;
-using _Scripts.Infrastructure.Installer;
+using _Scripts.Infrastructure.Installer.Common;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.Infrastructure.StateMachines.App.FSM;
 using _Scripts.Infrastructure.StateMachines.App.States;
-using _Scripts.UI.Windows;
 using UnityEngine;
 
 namespace _Scripts.Game.UI.Windows.Hello

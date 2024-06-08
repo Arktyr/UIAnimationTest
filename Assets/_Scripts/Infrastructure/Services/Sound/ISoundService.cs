@@ -1,7 +1,7 @@
-using _Scripts.Game.Services.Settings;
+using _Scripts.Infrastructure.Services.Settings;
 using _Scripts.Infrastructure.Singleton;
 
-namespace _Scripts.Game.Services.Sound
+namespace _Scripts.Infrastructure.Services.Sound
 {
     public interface ISoundService : IService
     {
