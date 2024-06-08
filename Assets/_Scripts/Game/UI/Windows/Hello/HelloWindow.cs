@@ -23,17 +23,19 @@ namespace _Scripts.Game.UI.Windows.Hello
             _curtain = AllServices.Container.GetSingle<CurtainPresenter>();
         }
 
-        public async void Open()
+        public void Open()
         {
             gameObject.SetActive(true);
-            await _windowAnimation.ShowWindow();
+            _windowAnimation.ShowWindow(default);
         }
 
-        public async void Close()
-        {
-            await _windowAnimation.HideWindow();
-            gameObject.SetActive(false);
+        public void Close() => 
+            _windowAnimation.HideWindow(OnHideWindow);
 
+        private async void OnHideWindow()
+        {
+            gameObject.SetActive(false);
+            
             await _curtain.ShowCurtain();
             _appStateMachine.Enter<MainState>();
         }

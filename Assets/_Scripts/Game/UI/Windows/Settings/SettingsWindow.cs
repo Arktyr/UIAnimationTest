@@ -28,20 +28,18 @@ namespace _Scripts.Game.UI.Windows.Settings
                 toogle.OnValueChanged += SwitchSoundSettings;
         }
 
-        public async void Open()
+        public void Open()
         {
             gameObject.SetActive(true);
-            await _windowAnimation.ShowWindow();
+            
+            _windowAnimation.ShowWindow(default);
         }
 
         private void SwitchSoundSettings(float value, SoundGroupID soundGroupID) => 
             _settingsService.SetSoundsVolume(soundGroupID, value);
 
-        public async void Close()
-        {
-            await _windowAnimation.HideWindow();
-            gameObject.SetActive(false);
-        }
+        public void Close() => 
+            _windowAnimation.HideWindow(() => gameObject.SetActive(false));
 
         private void OnDestroy()
         {

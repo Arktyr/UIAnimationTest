@@ -11,18 +11,22 @@ namespace _Scripts.Infrastructure.StateMachines.App.States
     {
         private readonly IAppStateMachine _appStateMachine;
         private readonly ISoundService _soundService;
+        private readonly ISettingsService _settingsService;
         
         public InitializationState(IAppStateMachine appStateMachine,
-            ISoundService soundService)
+            ISoundService soundService,
+            ISettingsService settingsService)
         {
             _appStateMachine = appStateMachine;
             _soundService = soundService;
+            _settingsService = settingsService;
         }
 
         public void Enter()
         {
             DOTween.Init();
             
+            _settingsService.UpdateData();
             _soundService.PlaySoundInLoop(SoundID.SoundTrack, SoundGroupID.Music);
             _appStateMachine.Enter<StartState>();
         }
