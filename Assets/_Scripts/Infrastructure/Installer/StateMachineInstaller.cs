@@ -1,4 +1,5 @@
-﻿using _Scripts.Game.UI.Curtain;
+﻿using _Scripts.Game.Services.Sound;
+using _Scripts.Game.UI.Curtain;
 using _Scripts.Infrastructure.Scene;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.Infrastructure.StateMachines.App;
@@ -31,10 +32,11 @@ namespace _Scripts.Infrastructure.Installer
         {
             IWindowService windowService = AllServices.Container.GetSingle<IWindowService>();
             ISceneLoaderService sceneLoaderService = AllServices.Container.GetSingle<ISceneLoaderService>();
+            ISoundService soundService = AllServices.Container.GetSingle<ISoundService>();
             CurtainPresenter curtainPresenter = AllServices.Container.GetSingle<CurtainPresenter>();
             
             InitializationState initializationState = AllServices.Container
-                .RegisterSingle(new InitializationState(appStateMachine));
+                .RegisterSingle(new InitializationState(appStateMachine, soundService));
             
             MainState mainState = AllServices.Container
                 .RegisterSingle

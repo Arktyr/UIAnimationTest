@@ -1,5 +1,6 @@
 ﻿using System;
 using _Scripts.Game.Services.Settings;
+using _Scripts.Game.Services.Sound;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ namespace _Scripts.Game.UI.Buttons.Toggles
         [SerializeField] private SoundGroupID _soundGroupID;
         [SerializeField] private float _valueOn;
         [SerializeField] private float _valueOff;
-        
+
         public event Action<float, SoundGroupID> OnValueChanged; 
 
         private void Awake() => 

@@ -1,4 +1,5 @@
-﻿using _Scripts.UI.Windows.Switch;
+﻿using _Scripts.Game.Services.Sound;
+using _Scripts.UI.Windows.Switch;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ namespace _Scripts.Game.UI.Buttons
         private void Awake() => 
             _button.onClick.AddListener(SwitchWindow);
 
-        private void SwitchWindow() =>
+        private void SwitchWindow() => 
             _windowSwitcher.CloseWindow();
 
         private void OnDestroy() => 

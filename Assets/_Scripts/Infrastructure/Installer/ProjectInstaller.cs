@@ -1,4 +1,5 @@
 ﻿using _Scripts.Game.Services.Settings;
+using _Scripts.Game.Services.Sound;
 using _Scripts.Game.UI.Curtain;
 using _Scripts.Infrastructure.Scene;
 using _Scripts.Infrastructure.Singleton;
@@ -10,6 +11,7 @@ namespace _Scripts.Infrastructure.Installer
     public class ProjectInstaller : Installer
     {
         [SerializeField] private SettingsService _settingsService;
+        [SerializeField] private SoundService _soundService;
         [SerializeField] private CurtainPresenter _curtain;
         
         public override void Install()
@@ -28,6 +30,9 @@ namespace _Scripts.Infrastructure.Installer
 
             ISettingsService settingsService = AllServices.Container
                 .RegisterSingle<ISettingsService>(_settingsService);
+
+            ISoundService soundService = AllServices.Container
+                .RegisterSingle<ISoundService>(_soundService);
         }
 
         private void BindUI()
