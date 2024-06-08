@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using _Scripts.Extensions;
+using _Scripts.Game.UI.Curtain;
 using _Scripts.Game.UI.Windows.Hello;
 using _Scripts.Infrastructure.Scene;
 using _Scripts.Infrastructure.Singleton;
@@ -19,15 +20,20 @@ namespace _Scripts.Infrastructure.StateMachines.App.States
         private readonly IWindowService _windowService;
         private readonly ISceneLoaderService _sceneLoaderService;
         
+        private readonly CurtainPresenter _curtain;
+        
         private bool _isSetLocalDependencies;
         
         public StartState(IAppStateMachine appStateMachine,
             IWindowService windowService,
-            ISceneLoaderService sceneLoaderService)
+            ISceneLoaderService sceneLoaderService,
+            CurtainPresenter curtainPresenter)
         {
             _appStateMachine = appStateMachine;
             _windowService = windowService;
             _sceneLoaderService = sceneLoaderService;
+
+            _curtain = curtainPresenter;
         }
 
         public void SetLocalDependencies(params IWindow[] windows)
@@ -47,10 +53,11 @@ namespace _Scripts.Infrastructure.StateMachines.App.States
             _windowService.Open<HelloWindow>();
         }
 
-        public void Exit()
+        public async void Exit()
         {
             _windowService.ClearWindows();
 
+            await _curtain.ShowCurtain();
 
             _isSetLocalDependencies = false;
         }

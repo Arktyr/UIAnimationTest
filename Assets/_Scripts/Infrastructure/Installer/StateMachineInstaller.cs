@@ -1,4 +1,5 @@
-﻿using _Scripts.Infrastructure.Scene;
+﻿using _Scripts.Game.UI.Curtain;
+using _Scripts.Infrastructure.Scene;
 using _Scripts.Infrastructure.Singleton;
 using _Scripts.Infrastructure.StateMachines.App;
 using _Scripts.Infrastructure.StateMachines.App.FSM;
@@ -30,15 +31,17 @@ namespace _Scripts.Infrastructure.Installer
         {
             IWindowService windowService = AllServices.Container.GetSingle<IWindowService>();
             ISceneLoaderService sceneLoaderService = AllServices.Container.GetSingle<ISceneLoaderService>();
+            CurtainPresenter curtainPresenter = AllServices.Container.GetSingle<CurtainPresenter>();
             
             InitializationState initializationState = AllServices.Container
                 .RegisterSingle(new InitializationState(appStateMachine));
             
             MainState mainState = AllServices.Container
-                .RegisterSingle(new MainState(appStateMachine));
+                .RegisterSingle(new MainState(appStateMachine, sceneLoaderService, curtainPresenter));
             
             StartState state = AllServices.Container
-                .RegisterSingle(new StartState(appStateMachine, windowService, sceneLoaderService));
+                .RegisterSingle
+                    (new StartState(appStateMachine, windowService, sceneLoaderService, curtainPresenter));
         }
     }
 }

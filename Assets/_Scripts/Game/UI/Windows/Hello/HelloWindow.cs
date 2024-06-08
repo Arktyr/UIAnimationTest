@@ -1,17 +1,36 @@
-﻿using _Scripts.UI.Windows;
+﻿using _Scripts.Game.Animations.Window;
+using _Scripts.Infrastructure.Installer;
+using _Scripts.Infrastructure.Singleton;
+using _Scripts.Infrastructure.StateMachines.App.FSM;
+using _Scripts.Infrastructure.StateMachines.App.States;
+using _Scripts.UI.Windows;
 using UnityEngine;
 
 namespace _Scripts.Game.UI.Windows.Hello
 {
-    public class HelloWindow : MonoBehaviour, IWindow
+    public class HelloWindow : IInjectable, IWindow
     {
-        public void Open()
+        [SerializeField] private WindowAnimation _windowAnimation;
+        
+        private IAppStateMachine _appStateMachine;
+
+        public override void Inject()
         {
-            Debug.Log("Open");
+            _appStateMachine = AllServices.Container.GetSingle<IAppStateMachine>();
         }
 
-        public void Close()
+        public async void Open()
         {
+            gameObject.SetActive(true);
+            await _windowAnimation.ShowWindow();
+        }
+
+        public async void Close()
+        {
+            await _windowAnimation.HideWindow();
+            gameObject.SetActive(false);
+            
+            _appStateMachine.Enter<MainState>();
         }
     }
 }
